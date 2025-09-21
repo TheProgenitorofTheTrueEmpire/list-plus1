@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <title>منوی داینامیک</title>
+
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet"
+        type="text/css" />
+    <style>
+        * {
+            direction: rtl;
+            font-family: vazirmatn;
+
+        }
+
+        ul.menu {
+            list-style: none;
+            padding: 0;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+        }
+
+        ul.menu li {
+            padding: 10px 20px;
+        }
+
+        ul.menu li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        ul.menu li:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="menu" id="menu"></ul>
+
+    <script>
+
+        const menuItems = ["خانه", "درباره ما", "خدمات", "تماس با ما"];
+
+
+        const menu = document.getElementById("menu");
+
+
+        for (let i = 0; i < menuItems.length; i++) {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.textContent = menuItems[i];
+            a.href = "#";
+            li.appendChild(a);
+            menu.appendChild(li);
+        }
+        const button = document.createElement("button");
+        button.textContent = "ok";
+        button.onclick = function () {
+            alert("hi");
+        };
+        document.body.appendChild(button);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <title>لیست کارها</title>
+    <style>
+        * {
+            direction: rtl;
+
+        }
+
+        input,
+        button {
+            font-size: 25px;
+            margin: 5px;
+        }
+
+        ul {
+            /* margin-top: 20px; */
+           
+            list-style: none;
+            
+        }
+
+        li {
+             display: flex;
+            font-size: 20px;
+            justify-content: space-between;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>کارهای روزمره </h1>
+
+    <form action="#">
+        <input type="text" placeholder = "کار جدید را وارد کنید" id="input "  value="">
+        <button  type="submit">افزودن</button>
+    </form>
+ 
+        <ul id="list">
+        </ul>
+   
+ <script>
+ const ul = getElementById("list");
+function  click() {
+        
+
+        const  ul = document.createElement("ul")
+        const li = document.createElement("li");
+       
+            const input = document.getElementById("input");
+            const taskText = input.value;
+
+            if (taskText === "")return;           ;
+
+            
+            li.textContent = taskText;
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "حذف";
+            deleteBtn.onclick = function () {
+                ul.removeChild(li);
+            };
+
+            li.appendChild(deleteBtn);
+            ul.appendChild(li);
+
+            input.value = " ";
+        }
+    
+
+
+
+
+    </script>
+   
+
+</body>
+
+</html>
